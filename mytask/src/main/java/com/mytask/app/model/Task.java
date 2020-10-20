@@ -13,6 +13,7 @@ public class Task {
 	private boolean isApprove;
 	private boolean isRejected;
 	private String roles;
+	private String email;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -57,6 +58,15 @@ public class Task {
 	public void setRoles(String roles) {
 		this.roles = roles;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 	
 	
 }

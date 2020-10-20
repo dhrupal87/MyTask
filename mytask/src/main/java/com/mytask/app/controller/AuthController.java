@@ -37,7 +37,7 @@ import com.mytask.app.service.UserDetailsImpl;
 
 
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 3600,allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {

@@ -9,6 +9,7 @@ public class TaskRequest {
 	private int id;
 	private String taskDescription;
 	private String roles;
+	private  String email;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,6 +35,14 @@ public class TaskRequest {
 
 	public void setRoles(String roles) {
 		this.roles = roles;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 }

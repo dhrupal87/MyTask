@@ -20,6 +20,7 @@ public class TaskBuilder {
 		task.setId(genrateOtp());
 	    task.setTaskDescription(taskReq.getTaskDescription());
 	    task.setRoles(taskReq.getRoles());
+	    task.setEmail(taskReq.getEmail());
 	    taskReposiotry.save(task);
 	    return task;
 	}

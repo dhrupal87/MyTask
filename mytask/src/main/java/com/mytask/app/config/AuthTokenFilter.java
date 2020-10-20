@@ -37,7 +37,11 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 			String jwt = parseJwt(request);
 			if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
 				String username = jwtUtils.getUserNameFromJwtToken(jwt);
-
+				response.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+				response.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE");
+				response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
+				response.setHeader("Access-Control-Max-Age", "3600");
+				response.setHeader("Access-Control-Allow-Credentials", "true");
 				UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 				UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
 						userDetails, null, userDetails.getAuthorities());

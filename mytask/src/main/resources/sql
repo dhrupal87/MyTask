@@ -9,9 +9,28 @@ INSERT INTO roles(name) VALUES('Final_Approve');
 "password" : "123456",
 "roles" : "Task_creator"
 }
-
-
+------------roles-------
+   Task_creator,
+   Validation_Officer,
+   Risk_Officer,
+   Final_Approve
+   
+   
 {
 "username" : "xyz",
 "password" : "123456",
+}
+
+
+http://localhost:8086/api/v1/task/getAllTask
+
+http://localhost:8086/api/v1/task/approveTask/1
+
+
+http://localhost:8086/api/v1/task/addTask
+{
+"taskDescription": "I confirmed URL",
+"isApprove":"",
+"isRejected":"",
+"roles":"Task_creator"
 }

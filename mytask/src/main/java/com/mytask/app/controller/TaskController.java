@@ -3,6 +3,7 @@ package com.mytask.app.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +18,7 @@ import com.mytask.app.model.TaskRequest;
 import com.mytask.app.repository.TaskRepository;
 import com.mytask.app.service.TaskService;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/v1/task")
 public class TaskController {
@@ -24,7 +26,7 @@ public class TaskController {
 	@Autowired
 	TaskRepository taskReposiotry;
 	
-	@Autowired
+	@Autowired 
 	TaskService taskService;
 		
 	@Autowired
@@ -40,7 +42,7 @@ public class TaskController {
 		return isApprove;
 	}
 	
-	@PutMapping("/rejectTask")
+	@PutMapping("/rejectTask/{id}")
 	public String rejectTask(@PathVariable int id) {
 		String isRejected = taskService.rejectTaskBy(id);
 		return isRejected;
